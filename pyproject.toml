@@ -10,7 +10,7 @@ authors = [
   { name = "Talha Awan", email = "talha@talhaawan.net" }
 ]
 readme = "readme.md"
-license = "MIT"
+license = { text = "MIT" }
 dependencies = []
 requires-python = ">=3.8"
 
