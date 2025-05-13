@@ -1,9 +1,11 @@
 # RandomCoords Python Client
 
 [![PyPI version](https://img.shields.io/pypi/v/randomcoords)](https://pypi.org/project/randomcoords/)
-![CI](https://github.com/TalhaAwan/randomcoords-python/actions/workflows/ci.yml/badge.svg)
+[![CI](https://github.com/TalhaAwan/randomcoords-python/actions/workflows/ci.yml/badge.svg)](https://github.com/TalhaAwan/randomcoords-python/actions/workflows/ci.yml)
+[![Supported Python Versions](https://img.shields.io/pypi/pyversions/randomcoords)](https://pypi.org/project/randomcoords/)
+[![Ruff](https://img.shields.io/endpoint?url=https://raw.githubusercontent.com/astral-sh/ruff/main/assets/badge/v2.json)](https://github.com/astral-sh/ruff)
+[![mypy](https://img.shields.io/badge/types-mypy-blue?logoColor=white)](http://mypy-lang.org/)
 [![License: MIT](https://img.shields.io/badge/license-MIT-blue.svg)](LICENSE)
-[![Python](https://img.shields.io/badge/python-%3E%3D3.8-blue)](https://www.python.org/)
 [![Downloads](https://img.shields.io/pypi/dm/randomcoords)](https://pypi.org/project/randomcoords/)
 
 The Python client for the RandomCoords API to fetch random geographic coordinates worldwide.
