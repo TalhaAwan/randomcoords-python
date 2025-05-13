@@ -8,6 +8,8 @@ on:
       - "randomcoords/**"
       - "tests/**"
       - "pyproject.toml"
+      - ".github/workflows/ci.yml"
+
   pull_request:
     branches:
       - "main"
@@ -15,6 +17,7 @@ on:
       - "randomcoords/**"
       - "tests/**"
       - "pyproject.toml"
+      - ".github/workflows/ci.yml"
 
 jobs:
   test:
@@ -40,6 +43,7 @@ jobs:
       - name: Install dependencies
         run: |
           python -m pip install --upgrade pip
+          pip install setuptools==80.4.0 wheel==0.45.1
           pip install .[dev]
 
       - name: Run full validation (format + typecheck + test)
