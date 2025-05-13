@@ -1,3 +1,5 @@
+.PHONY: test typecheck format check-format validate build check-dist publish
+
 SRC = randomcoords tests
 
 test:
