@@ -5,10 +5,10 @@
 [![Supported Python Versions](https://img.shields.io/pypi/pyversions/randomcoords)](https://pypi.org/project/randomcoords/)
 [![Ruff](https://img.shields.io/endpoint?url=https://raw.githubusercontent.com/astral-sh/ruff/main/assets/badge/v2.json)](https://github.com/astral-sh/ruff)
 [![mypy](https://img.shields.io/badge/types-mypy-blue?logoColor=white)](http://mypy-lang.org/)
-[![License: MIT](https://img.shields.io/badge/license-MIT-blue.svg)](LICENSE)
+[![License: MIT](https://img.shields.io/badge/license-MIT-blue.svg)](https://github.com/TalhaAwan/randomcoords-python/blob/main/LICENSE)
 [![Downloads](https://img.shields.io/pypi/dm/randomcoords)](https://pypi.org/project/randomcoords/)
 
-The Python client for the RandomCoords API to fetch random geographic coordinates worldwide.
+The Python client for the [RandomCoords](https://www.randomcoords.com) API to fetch random geographic coordinates worldwide.
 
 ## Installation
 
@@ -19,7 +19,7 @@ pip install randomcoords
 ## Requirements
 
 - Python 3.8 or higher.
-- An `api_token` from [RandomCoords](https://www.randomcoords.com/docs/rest).
+- A [RandomCoords API token](https://www.randomcoords.com/docs/rest).
 
 ## Usage
 
