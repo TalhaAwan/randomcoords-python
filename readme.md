@@ -108,7 +108,13 @@ except Exception as e:
 All response and error types are available as top-level imports:
 
 ```python
-from randomcoords import RegionsResponse, CountriesResponse, RegionCoordinatesResponse, CountryCoordinatesResponse, RandomCoordsApiError
+from randomcoords import (
+    RegionsResponse,
+    CountriesResponse,
+    RegionCoordinatesResponse,
+    CountryCoordinatesResponse,
+    RandomCoordsApiError,
+)
 ```
 
 ## API Reference
