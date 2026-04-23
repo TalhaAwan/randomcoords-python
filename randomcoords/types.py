@@ -57,6 +57,7 @@ class CountryCoordinatesResponse(TypedDict):
 class Config(TypedDict, total=False):
     api_token: str
     base_url: str
+    timeout: float
 
 
 class CoordinatesOptions(TypedDict, total=False):

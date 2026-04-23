@@ -1,4 +1,5 @@
 import json
+import socket
 import urllib.request
 import urllib.error
 from typing import Optional, Dict, Any, cast
@@ -12,7 +13,7 @@ from .types import (
     CoordinatesOptions,
 )
 
-__version__ = "1.0.3"
+__version__ = "1.0.4"
 
 fallback_api_err_messages = {
     403: "Forbidden: Check API token formatting and headers.",
@@ -21,6 +22,7 @@ fallback_api_err_messages = {
 }
 
 BASE_URL = "https://api.randomcoords.com/v1/"
+DEFAULT_TIMEOUT = 5.0
 
 
 class RandomCoordsApiError(Exception):
@@ -38,6 +40,7 @@ class RandomCoords:
         self._validate_string(api_token, "apiToken", 10, 700)
         self.api_token: str = cast(str, api_token)
         self.base_url = base_url.rstrip("/") + "/"
+        self.timeout: float = config.get("timeout", DEFAULT_TIMEOUT)
 
     def _validate_string(
         self, value: Optional[str], label: str, min_len: int = 3, max_len: int = 30
@@ -65,7 +68,7 @@ class RandomCoords:
         req.add_header("User-Agent", f"randomcoords-python/{__version__}")
 
         try:
-            with urllib.request.urlopen(req) as response:
+            with urllib.request.urlopen(req, timeout=self.timeout) as response:
                 content_type = response.headers.get("Content-Type", "application/json")
                 body = response.read()
                 if "application/json" in content_type:
@@ -90,6 +93,18 @@ class RandomCoords:
                 e.code,
                 url,
             )
+
+        except urllib.error.URLError as e:
+            reason = e.reason
+            if isinstance(reason, (TimeoutError, socket.timeout)) or (
+                isinstance(reason, str) and "timed out" in reason.lower()
+            ):
+                raise RandomCoordsApiError(
+                    f"Request timed out after {self.timeout}s",
+                    0,
+                    url,
+                )
+            raise RandomCoordsApiError(f"Network error: {reason}", 0, url)
 
     def get_regions(self) -> RegionsResponse:
         return cast(RegionsResponse, self._make_request("coordinates/regions"))
