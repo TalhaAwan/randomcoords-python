@@ -13,7 +13,7 @@ from .types import (
     CoordinatesOptions,
 )
 
-__version__ = "1.0.4"
+__version__ = "1.0.5"
 
 fallback_api_err_messages = {
     403: "Forbidden: Check API token formatting and headers.",

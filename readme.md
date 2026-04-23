@@ -33,6 +33,14 @@ coords = client.get_country_coordinates("united-states", {"limit": 10})
 print(coords)
 ```
 
+### Constructor options
+
+| Key          | Type    | Default                                 | Description                      |
+| ------------ | ------- | --------------------------------------- | -------------------------------- |
+| `api_token`  | `str`   | —                                       | Required. Your API token.        |
+| `base_url`   | `str`   | `https://api.randomcoords.com/v1/`      | API base URL.                    |
+| `timeout`    | `float` | `5.0`                                   | Request timeout in seconds.      |
+
 ## Available Methods
 
 ### `get_regions()`
