@@ -12,6 +12,8 @@ from .types import (
     CoordinatesOptions,
 )
 
+__version__ = "1.0.3"
+
 fallback_api_err_messages = {
     403: "Forbidden: Check API token formatting and headers.",
     429: "Too many requests. Wait and try again.",
@@ -60,7 +62,7 @@ class RandomCoords:
 
         req = urllib.request.Request(url)
         req.add_header("x-api-token", self.api_token)
-        req.add_header("User-Agent", "randomcoords-python/1.0")
+        req.add_header("User-Agent", f"randomcoords-python/{__version__}")
 
         try:
             with urllib.request.urlopen(req) as response:

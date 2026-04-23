@@ -40,7 +40,7 @@ class RegionCoordinatesResponse(TypedDict):
 
 class CountryCoordinate(TypedDict):
     city: str
-    state: str
+    state: Optional[str]
     coordinates: List[float]
 
 

@@ -1,5 +1,6 @@
 from .core import RandomCoords
 from .core import RandomCoordsApiError
+from .core import __version__
 from .types import (
     RegionsResponse,
     CountriesResponse,
@@ -14,4 +15,5 @@ __all__ = [
     "CountriesResponse",
     "RegionCoordinatesResponse",
     "CountryCoordinatesResponse",
+    "__version__",
 ]
