@@ -22,6 +22,7 @@ class CountriesResponse(TypedDict):
 
 
 class Coordinate(TypedDict):
+    uid: str
     id: str
     country: str
     city: str
@@ -39,6 +40,7 @@ class RegionCoordinatesResponse(TypedDict):
 
 
 class CountryCoordinate(TypedDict):
+    uid: str
     city: str
     state: Optional[str]
     coordinates: List[float]
